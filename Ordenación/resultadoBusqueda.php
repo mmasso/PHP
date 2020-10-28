@@ -22,15 +22,15 @@
       $falloInputs = false;
       $value =  $_POST['valueToFind'];
 
-      if (empty($value) || !is_numeric($value)){
-        echo "<p> No ha introducido un valor válido en la aplicación </p>";
+      if ((empty($value) || !is_numeric($value)) && $value !== "0"){
         $falloInputs = true;
+        echo "<p> No ha introducido un valor válido en la aplicación </p>";
       }
       if ($seleccionArray == "arrayManual") {
         $arraySinTratar =  $_POST['numeros'];
         $arraySinOrdenar = explode(" ", $arraySinTratar);
         $array = $arraySinOrdenar;
-        asort($array);
+        sort($array);
         $arrayString = implode(", ", $array);
       }
       if ($seleccionArray == "arrayPredefinido") {
@@ -41,7 +41,7 @@
         $arrayLength =  $_POST["longitud"];
         $arraySinOrdenar = randomArray($arrayLength);
         $array = $arraySinOrdenar;
-        asort($array);
+        sort($array);
         $arrayString = implode(", ", $array);
       }
       if ($seleccionArray == "default"){
@@ -60,36 +60,39 @@
       }
 
 
-      function binarySearch($array, $value)
+      function busquedaBinaria($array, $value)
       {
         if (empty($array)) {
           return false;
         }
-        $low = 0;
-        $high = count($array) - 1;
 
-        while ($low <= $high) {
-          $mid = floor(($low + $high) / 2);
-          if ($array[$mid] == $value) {
+        $principio = 0;
+        $fin = count($array);
+
+        while ($principio <= $fin) {
+          $valorMedio = floor($principio + $fin) / 2;
+
+          if ($array[$valorMedio] == $value) {
             return true;
           }
-          if ($value < $array[$mid]) {
-            $high = $mid - 1;
-          } else {
-            $low = $mid + 1;
+
+          if ($value < $array[$valorMedio]) {
+            $fin = $valorMedio - 1;
+          } 
+          
+          else {
+            $principio = $valorMedio + 1;
           }
         }
         return false;
       }
 
 
-      if (binarySearch($array, $value) == true && $falloInputs == false) {
+      if (busquedaBinaria($array, $value) == true && $falloInputs == false) {
         echo "<p> El valor $value se encuentra en el siguiente array: </p><p> $arrayString </p>";
-      } 
-      if (binarySearch($array, $value) == false && $falloInputs == false) {
+      } elseif (busquedaBinaria($array, $value) == false && $falloInputs == false) {
         echo "<p> El valor $value NO se encuentra en el siguiente array: </p><p> $arrayString </p>";
       }
-
 
       ?>
     </div>
