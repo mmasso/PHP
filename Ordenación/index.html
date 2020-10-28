@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="scriptOrdenacion.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body cz-shortcut-listen="true">
+
+    <div class="cards">
+        <div class="card">
+            <h2>Búsqueda binaria con PHP</h2>
+
+            <form method="post" action="resultadoBusqueda.php">
+
+                <p>
+                    <label for="entradaData">¿En que datos desea buscar?</label><br><br>
+
+                    <select id="entradaData" name="entradaData">
+                        <option value="default" style="display:none;"></option>
+                        <option value="arrayManual">Escribir array de números manualmente</option>
+                        <option value="arrayPredefinido">Usar array predefinido (De 1 al 10)</option>
+                        <option value="arrayRandom">Generar array aleatorio de X números</option>
+                    </select>
+                </p>
+                <p>
+                    <div id="entradaUserNum" style="display: none;">
+                        <label for="numeros">Introduzca los numeros donde desea buscar separados por
+                        espacios</label><br><br>
+                        <input type="text" id="numeros" name="numeros">
+                    </div>
+                </p>
+                <p>
+                    <div id="entradaUserRandomArray" style="display: none;">
+                        <label for="numeros">Introduzca la longitud del array deseado</label><br><br>
+                        <input type="text" id="longitud" name="longitud">
+                    </div>
+                </p>
+                <p>
+                    <div id="valueToFind">
+                        <label for="valueToFind">Escriba el número que desea encontrar</label><br><br>
+                        <input type="text" id="valueToFind" name="valueToFind"><br><br>
+                    </div>
+
+                    <input type="submit" name="submit" value="Submit">
+                </p>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Algoritmos de ordenación con PHP</h2>
+
+            <form method="post" action="resultadoOrdenación.php">
+
+                <p>
+                    <label for="entradaDataOrdenacion">¿Que datos desea ordenar?</label><br><br>
+
+                    <select id="entradaDataOrdenacion" name="entradaDataOrdenacion">
+                        <option value="defaultOr" style="display:none;"></option>
+                        <option value="arrayManualOr">Escribir array de números manualmente</option>
+                        <option value="arrayPredefinidoOr">Usar array predefinido (De 1 al 10)</option>
+                        <option value="arrayRandomOr">Generar array aleatorio de X números</option>
+                    </select>
+                </p>
+                <p>
+                    <div id="entradaUserNumOrdenacion" style="display: none;">
+                        <label for="numerosOr">Introduzca los numeros que desea ordenar separados por
+                        espacios</label><br><br>
+                        <input type="text" id="numerosOr" name="numerosOr">
+                    </div>
+                </p>
+                <p>
+                    <div id="entradaUserRandomArrayOrdenacion" style="display: none;">
+                        <label for="numerosOr">Introduzca la longitud del array deseado</label><br><br>
+                        <input type="text" id="longitudOr" name="longitudOr">
+                    </div>
+                </p>
+                <p>
+
+                    <label for="entradaOrdenacion">¿Con que algoritmo desea ordenar los datos?</label><br><br>
+
+                    <select id="entradaOrdenacion" name="entradaOrdenacion">
+                        <option value="default" style="display:none;"></option>
+                        <option value="seleccionDirecta">Selección directa</option>
+                        <option value="burbuja">Burbuja</option>
+                    </select><br><br>
+
+                    <input type="submit" name="submit" value="Submit">
+                </p>
+            </form>
+        </div>
+        </form>
+    </div>
+    </div>
+    <script src="scriptOrdenacion.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</body>
+
+
+
+</html>
