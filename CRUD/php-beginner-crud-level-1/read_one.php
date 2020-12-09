@@ -74,7 +74,7 @@
             <tr>
                 <td>Image</td>
                 <td>
-                    <?php echo $image ? "<img src='uploads/{$image}' style='width:300px;' />" : "No image found.";  ?>
+                    <?php echo $image ? "<img src='{$image}' style='width:300px;' />" : "No image found.";  ?>
                 </td>
             </tr>
             <tr>
