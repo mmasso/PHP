@@ -35,7 +35,6 @@
             $stmt = $con->prepare($query);
 
             // this is the first question mark
-            $stmt->bindParam(1, $id);
 
             // execute our query
             $stmt->execute();
