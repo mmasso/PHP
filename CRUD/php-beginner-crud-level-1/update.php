@@ -35,6 +35,7 @@
             $stmt = $con->prepare($query);
 
             // this is the first question mark
+            $stmt->bindParam(1, $id);
 
             // execute our query
             $stmt->execute();
@@ -105,9 +106,9 @@
                 // in this case, it seemed like we have so many fields to pass and 
                 // it is better to label them and not use question marks
                 $query = "UPDATE products
-                SET name=:name, description=:description,
+                    SET name=:name, description=:description,
                     price=:price, image=:image
-                    WHERE id =:id";
+                    WHERE id=:id";
 
                 // prepare query for execution
                 $stmt = $con->prepare($query);
@@ -126,7 +127,6 @@
                 $stmt->bindParam(':name', $name);
                 $stmt->bindParam(':description', $description);
                 $stmt->bindParam(':price', $price);
-                $stmt->bindParam(':image', $image);
                 $stmt->bindParam(':id', $id);
 
                 // specify when this record was inserted to the database
