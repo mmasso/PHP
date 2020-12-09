@@ -107,7 +107,7 @@
                 // it is better to label them and not use question marks
                 $query = "UPDATE products
                 SET name=:name, description=:description,
-                    price=:price, image=:image, created=:created
+                    price=:price, image=:image
                     WHERE id =:id";
 
                 // prepare query for execution
@@ -128,6 +128,7 @@
                 $stmt->bindParam(':description', $description);
                 $stmt->bindParam(':price', $price);
                 $stmt->bindParam(':image', $image);
+                $stmt->bindParam(':id', $id);
 
                 // specify when this record was inserted to the database
                 $created = date('Y-m-d H:i:s');
