@@ -108,7 +108,7 @@
                 $query = "UPDATE products
                 SET name=:name, description=:description,
                     price=:price, image=:image, created=:created
-                    WHERE id = id";
+                    WHERE id =:id";
 
                 // prepare query for execution
                 $stmt = $con->prepare($query);
