@@ -69,12 +69,12 @@
             </tr>
             <tr>
                 <td>Price</td>
-                <td><?php echo htmlspecialchars($price, ENT_QUOTES);  ?></td>
+                <td><?php echo htmlspecialchars($price ,'$', ENT_QUOTES);  ?></td>
             </tr>
             <tr>
                 <td>Image</td>
                 <td>
-                    <?php echo $image ? "<img src='{$image}' style='width:300px;' />" : "No image found.";  ?>
+                    <?php echo $image ? "<img src='uploads/{$image}' style='width:300px;' />" : "No image found.";  ?>
                 </td>
             </tr>
             <tr>
