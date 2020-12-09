@@ -61,7 +61,7 @@
         <!-- PHP post to update record will be here -->
 
         <!--we have our html form here where new record information can be updated-->
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]) . "?id={$id}"; ?>" method="post" enctype="multipart/form-data">
             <table class='table table-hover table-responsive table-bordered'>
                 <tr>
                     <td>Name</td>
@@ -105,9 +105,10 @@
                 // write update query
                 // in this case, it seemed like we have so many fields to pass and 
                 // it is better to label them and not use question marks
-                $query = "INSERT INTO products
+                $query = "UPDATE products
                 SET name=:name, description=:description,
-                    price=:price, image=:image, created=:created";
+                    price=:price, image=:image, created=:created
+                    WHERE id = id";
 
                 // prepare query for execution
                 $stmt = $con->prepare($query);
